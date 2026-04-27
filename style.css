@@ -128,3 +128,49 @@ hr {
     background-image: linear-gradient(to right, rgba(59, 35, 19, 0), rgba(59, 35, 19, 0.8), rgba(59, 35, 19, 0));
     margin: 40px 0;
 }
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 15px;
+    }
+
+    .title {
+        font-size: 3.5rem;
+        letter-spacing: 3px;
+    }
+
+    .author {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+    }
+
+    .phrase {
+        font-size: 1.1rem;
+        padding: 30px 20px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+    }
+
+    .title {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .author {
+        font-size: 0.85rem;
+        letter-spacing: 0px;
+        margin-bottom: 20px;
+    }
+    
+    .phrase {
+        font-size: 0.95rem;
+        padding: 20px 15px;
+    }
+}
