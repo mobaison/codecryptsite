@@ -132,45 +132,51 @@ hr {
 /* Responsive adjustments for mobile devices */
 @media (max-width: 768px) {
     .container {
-        padding: 30px 15px;
+        padding: 20px 10px;
     }
 
     .title {
-        font-size: 3.5rem;
-        letter-spacing: 3px;
+        font-size: 3rem;
+        letter-spacing: 2px;
     }
 
     .author {
-        font-size: 1rem;
+        font-size: 0.9rem;
         letter-spacing: 1px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
+        line-height: 1.4;
     }
 
     .phrase {
-        font-size: 1.1rem;
-        padding: 30px 20px;
-        line-height: 1.6;
+        font-size: 1rem;
+        padding: 20px 15px;
+        line-height: 1.5;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 20px 10px;
+        padding: 10px 5px;
     }
 
     .title {
-        font-size: 2.8rem;
-        letter-spacing: 2px;
+        font-size: 2.2rem;
+        letter-spacing: 1px;
     }
     
     .author {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         letter-spacing: 0px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     
     .phrase {
-        font-size: 0.95rem;
-        padding: 20px 15px;
+        font-size: 0.85rem;
+        padding: 15px 10px;
+        line-height: 1.4;
+    }
+    
+    .phrase p {
+        margin: 8px 0;
     }
 }
