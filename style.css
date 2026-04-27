@@ -2,45 +2,129 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Cinzel', serif;
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background: url('./assets/bg.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #f5d27a;
+    font-family: 'IM Fell English', serif;
+    overflow-y: auto;
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 10, 0, 0.4) 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .container {
     position: relative;
     text-align: center;
     z-index: 2;
-    padding: 20px;
+    padding: 60px 20px;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
-    font-size: 3rem;
+    font-family: 'Pirata One', cursive;
+    font-size: 6rem;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+    color: #ffd700;
+    text-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.6),
+        3px 3px 5px rgba(0, 0, 0, 0.9),
+        -1px -1px 0 #593e00,
+        1px -1px 0 #593e00,
+        -1px 1px 0 #593e00,
+        1px 1px 0 #593e00;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 3px 3px 5px rgba(0, 0, 0, 0.9);
+    }
+    to {
+        text-shadow: 0 0 25px rgba(255, 215, 0, 0.9), 3px 3px 12px rgba(0, 0, 0, 1);
+    }
+}
+
+.author {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: #fce2a1;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
     letter-spacing: 3px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 20px rgba(255, 200, 100, 0.7);
+    text-transform: uppercase;
 }
 
 .phrase {
+    font-family: 'IM Fell English', serif;
     font-size: 1.5rem;
-    max-width: 600px;
-    line-height: 1.6;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 215, 0, 0.3);
+    max-width: 750px;
+    width: 100%;
+    line-height: 1.8;
+    color: #3b2313;
+    background: #e2cfa7;
+    background-image: 
+        radial-gradient(circle at center, transparent 0%, rgba(200, 171, 120, 0.6) 100%),
+        url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.2'/%3E%3C/svg%3E");
+    padding: 50px;
+    border-radius: 4px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 40px rgba(139, 69, 19, 0.5),
+        inset 0 0 15px rgba(101, 67, 33, 0.7);
+    border: 1px solid rgba(139, 69, 19, 0.4);
+    position: relative;
+    text-align: center;
+}
+
+/* Creating ripped/burnt edges effect */
+.phrase::before, .phrase::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: transparent;
+    z-index: -1;
+}
+.phrase::before {
+    top: -6px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+.phrase::after {
+    bottom: -6px;
+    box-shadow: 0 -6px 12px rgba(0,0,0,0.4);
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+.phrase p {
+    margin: 10px 0;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.2);
+}
+
+hr {
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(59, 35, 19, 0), rgba(59, 35, 19, 0.8), rgba(59, 35, 19, 0));
+    margin: 40px 0;
 }
